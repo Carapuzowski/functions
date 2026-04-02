@@ -27,7 +27,7 @@ class MixedPrecision:
         unscaled_gradients = grandients_fp32 / self.loss_scale
         
         overflow = np.isnan(unscaled_gradients).any() or np.isinf(unscaled_gradients).any()
-        s
+        
         if overflow:
             unscaled_gradients = np.zeros_like(unscaled_gradients)
             
